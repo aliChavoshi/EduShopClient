@@ -1,0 +1,23 @@
+<header class="p-3 text-bg-dark">
+  <div class="container">
+    <div class="d-flex flex-nowrap align-items-center justify-content-between">
+      <!-- <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+        <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search" />
+      </form> -->
+      <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+        <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class="nav-link px-2 text-white">صفحه اصلی</a></li>
+        <li><a routerLink="/shop" routerLinkActive="active" class="nav-link px-2 text-white">محصولات</a></li>
+        <li><a routerLink="/contactUs" class="nav-link px-2 text-white">تماس با ما</a></li>
+        <li><a routerLink="/aboutUs" class="nav-link px-2 text-white">درباره ما</a></li>
+        <!-- <li><a href="#" class="nav-link px-2 text-white">About</a></li> -->
+      </ul>
+      <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+        <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
+      </a>
+      <div class="text-end">
+        <button type="button" routerLink="/login" class="btn btn-outline-light mx-2">ورود</button>
+        <button type="button" routerLink="/register" class="btn btn-warning">عضویت</button>
+      </div>
+    </div>
+  </div>
+</header>

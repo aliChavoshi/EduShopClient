@@ -1,0 +1,35 @@
+{
+   "printWidth": 180,
+   "singleQuote": true,
+   "tabWidth": 2,
+   "overrides": [
+      {
+         "files": "*.ts",
+         "options": {
+            "parser": "typescript",
+            "trailingComma": "none"
+         }
+      },
+      {
+         "files": "*.json",
+         "options": {
+            "parser": "json",
+            "trailingComma": "none"
+         }
+      },
+      {
+         "files": "*.scss",
+         "options": {
+            "parser": "scss",
+            "trailingComma": "none"
+         }
+      },
+      {
+         "files": "*.css",
+         "options": {
+            "parser": "css",
+            "trailingComma": "none"
+         }
+      }
+   ]
+}

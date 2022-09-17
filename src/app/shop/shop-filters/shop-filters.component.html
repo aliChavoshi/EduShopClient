@@ -1,0 +1,68 @@
+<!-- types -->
+<div class="w-100 px-1 mb-2">
+  <section class="sticky-top">
+    <div class="list-group shadow">
+      <label class="list-group-item d-flex gap-3 active text-start">
+        <span class="form-checked-content">
+          <strong>نوع</strong>
+        </span>
+      </label>
+      <select class="form-select rounded-bottom rounded-0" (change)="onChangeTypes($any($event.target)?.value)">
+        <option [value]="item?.id" *ngFor="let item of types">
+          {{ item?.title }}
+        </option>
+      </select>
+    </div>
+  </section>
+</div>
+<!-- brands -->
+<div class="w-100 px-1 mb-2">
+  <section class="sticky-top">
+    <div class="list-group shadow">
+      <label class="list-group-item d-flex gap-3 active text-start">
+        <span class="form-checked-content">
+          <strong>برند</strong>
+        </span>
+      </label>
+      <select class="form-select rounded-bottom rounded-0" (change)="onChangeBrands($any($event.target)?.value)">
+        <option [value]="item?.id" *ngFor="let item of brands">
+          {{ item?.title }}
+        </option>
+      </select>
+    </div>
+  </section>
+</div>
+<!-- sort -->
+<div class="w-100 px-1 mb-2">
+  <section class="sticky-top">
+    <div class="list-group shadow">
+      <label class="list-group-item d-flex gap-3 active text-start">
+        <span class="form-checked-content">
+          <strong>نوع مرتب سازی</strong>
+        </span>
+      </label>
+      <select class="form-select rounded-bottom rounded-0" (change)="onChangeSort($any($event.target)?.value)">
+        <option [selected]="item?.key === shopParams?.sort" [value]="item?.key" *ngFor="let item of sortOptions">
+          {{ item?.title }}
+        </option>
+      </select>
+    </div>
+  </section>
+</div>
+<!-- type sort -->
+<div class="w-100 px-1 mb-2">
+  <section class="sticky-top">
+    <div class="list-group shadow">
+      <label class="list-group-item d-flex gap-3 active text-start">
+        <span class="form-checked-content">
+          <strong>صعودی نزولی</strong>
+        </span>
+      </label>
+      <select class="form-select rounded-bottom rounded-0" (change)="onChangeSortType($any($event.target)?.value)">
+        <option [selected]="item.key === shopParams?.typeSort" [value]="item?.key" *ngFor="let item of sortTypeOptions">
+          {{ item?.title }}
+        </option>
+      </select>
+    </div>
+  </section>
+</div>

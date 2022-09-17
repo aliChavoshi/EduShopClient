@@ -1,0 +1,29 @@
+<mat-sidenav-container>
+  <!-- side -->
+  <mat-sidenav [opened]="sidenavOpen" [mode]="sidenavOpen ? 'side' : 'over'" class="mat-sidenav">
+    <app-shop-filters (updateParams)="updateParams($event)"></app-shop-filters>
+  </mat-sidenav>
+  <!-- content -->
+  <mat-sidenav-content class="mat-content">
+    <div class="row w-100">
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-2" *ngFor="let item of data?.result">
+        <app-card-shop [product]="item"></app-card-shop>
+      </div>
+    </div>
+    <!-- pagination -->
+    <div class="row" *ngIf="data?.result?.length > 0">
+      <div class="col-xs-12 col-12">
+        <pagination
+          (pageChanged)="onPageChange($event)"
+          [totalItems]="data.count"
+          [itemsPerPage]="shopParams.pageSize"
+          [(ngModel)]="shopParams.pageIndex"
+          previousText="&lsaquo;"
+          nextText="&rsaquo;"
+          firstText="&laquo;"
+          lastText="&raquo;"
+        ></pagination>
+      </div>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
