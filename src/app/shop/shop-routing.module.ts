@@ -6,13 +6,13 @@ import { ShopComponent } from './shop.component';
 const routes: Routes = [
   {
     path: '',
-    pathMatch : 'full',
+    pathMatch: 'full',
     component: ShopComponent
   },
   {
     path: ':id',
     component: ShopDetailComponent,
-    pathMatch : 'full'
+    pathMatch: 'full'
   }
 ];
 

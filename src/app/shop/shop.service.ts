@@ -30,7 +30,7 @@ export class ShopService {
     return this.http.get<IPagination<IProduct>>(this.backendUrl + '/products', { params });
   }
   getProduct(id: number) {
-    
+    return this.http.get<IProduct>(`${this.backendUrl}/products/${id}`);
   }
   private generateShopParams() {
     let params = new HttpParams();
