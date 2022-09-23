@@ -6,18 +6,10 @@ import { ShopRoutingModule } from './shop-routing.module';
 import { ShopComponent } from './shop.component';
 import { ShopFiltersComponent } from './shop-filters/shop-filters.component';
 import { FormsModule } from '@angular/forms';
-
+import { ShopDetailComponent } from './shop-detail/shop-detail.component';
 
 @NgModule({
-  declarations: [
-    ShopComponent,
-    ShopFiltersComponent
-  ],
-  imports: [
-    CommonModule,
-    FormsModule,
-    ShopRoutingModule,
-    SharedModule
-  ]
+  declarations: [ShopComponent, ShopFiltersComponent, ShopDetailComponent],
+  imports: [CommonModule, FormsModule, ShopRoutingModule, SharedModule]
 })
-export class ShopModule { }
+export class ShopModule {}

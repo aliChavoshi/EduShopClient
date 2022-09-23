@@ -29,6 +29,9 @@ export class ShopService {
     let params = this.generateShopParams();
     return this.http.get<IPagination<IProduct>>(this.backendUrl + '/products', { params });
   }
+  getProduct(id: number) {
+    
+  }
   private generateShopParams() {
     let params = new HttpParams();
     params = params.append('sort', this.shopParams?.sort);

@@ -1,7 +1,6 @@
 <div class="col">
-  <div class="card shadow-sm">
-    <img [src]="product?.pictureUrl" class="img-thumbnail w-100  border-0" />
-
+  <div class="card shadow-sm" [routerLink]="['/shop', product?.id]">
+    <img [routerLink]="['/shop', product?.id]" [src]="product?.pictureUrl" class="img-thumbnail w-100 border-0" />
     <div class="card-body">
       <p class="card-text">{{ product?.title }}</p>
       <div class="d-flex justify-content-between align-items-center">
@@ -9,7 +8,7 @@
           <button type="button" class="btn btn-sm btn-outline-success"><span class="fas fa-shopping-basket"></span></button>
           <button type="button" class="btn btn-sm btn-outline-primary"><span class="fas fa-eye"></span></button>
         </div>
-        <small class="text-muted">{{product?.price | number}}</small>
+        <small class="text-muted">{{ product?.price | number }}</small>
       </div>
     </div>
   </div>

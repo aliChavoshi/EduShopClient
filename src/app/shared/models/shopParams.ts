@@ -5,6 +5,6 @@ export class ShopParams {
   typeSort: number = 1;
   search: string = '';
   sort: number = 1;
-  pageSize: number = 6;
+  pageSize: number = 12;
   pageIndex: number = 1;
 }
