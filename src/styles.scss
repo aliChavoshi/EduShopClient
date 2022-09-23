@@ -53,6 +53,8 @@ body {
 }
 // angular material theme
 @import '@angular/material/prebuilt-themes/indigo-pink.css';
+//toast message
+@import 'ngx-toastr/toastr.css';
 // default
 *,
 *:before,

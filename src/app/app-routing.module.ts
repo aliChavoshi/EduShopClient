@@ -1,3 +1,4 @@
+import { ServerErrorComponent } from './core/layers/server-error/server-error.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { NotFoundComponent } from './core/layers/not-found/not-found.component';
@@ -12,6 +13,14 @@ const routes: Routes = [
     path: 'shop',
     title: 'فروشگاه',
     loadChildren: () => import('./shop/shop.module').then((x) => x.ShopModule)
+  },
+  {
+    path: 'notFound',
+    component: NotFoundComponent
+  },
+  {
+    path: 'serverError',
+    component: ServerErrorComponent
   },
   {
     path: '**',
