@@ -12,7 +12,8 @@ const routes: Routes = [
   {
     path: ':id',
     component: ShopDetailComponent,
-    pathMatch: 'full'
+    pathMatch: 'full',
+    data: { breadcrumb: { alias: 'ProductDetail' } }
   }
 ];
 

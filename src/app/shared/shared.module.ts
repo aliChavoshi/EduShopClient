@@ -10,6 +10,9 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
 //toast message
 import { ToastrModule } from 'ngx-toastr';
+import { BreadcrumbModule } from 'xng-breadcrumb';
+//breadcrumb
+
 @NgModule({
   declarations: [CardShopComponent],
   imports: [
@@ -17,6 +20,7 @@ import { ToastrModule } from 'ngx-toastr';
     MatSidenavModule,
     PaginationModule,
     RouterModule,
+    BreadcrumbModule,
     ToastrModule.forRoot({
       positionClass: 'toast-bottom-right',
       preventDuplicates: true,
@@ -25,6 +29,6 @@ import { ToastrModule } from 'ngx-toastr';
       timeOut: 5000
     })
   ],
-  exports: [CardShopComponent, MatSidenavModule, PaginationModule, ToastrModule]
+  exports: [CardShopComponent, MatSidenavModule, PaginationModule, ToastrModule,BreadcrumbModule]
 })
 export class SharedModule {}

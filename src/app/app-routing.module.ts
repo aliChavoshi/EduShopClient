@@ -7,20 +7,24 @@ const routes: Routes = [
   {
     path: '',
     title: 'صفحه اصلی',
-    loadChildren: () => import('./home/home.module').then((x) => x.HomeModule)
+    loadChildren: () => import('./home/home.module').then((x) => x.HomeModule),
+    data: { breadcrumb: { label: 'خانه' } }
   },
   {
     path: 'shop',
     title: 'فروشگاه',
-    loadChildren: () => import('./shop/shop.module').then((x) => x.ShopModule)
+    loadChildren: () => import('./shop/shop.module').then((x) => x.ShopModule),
+    data: { breadcrumb: 'محصولات' }
   },
   {
     path: 'notFound',
-    component: NotFoundComponent
+    component: NotFoundComponent,
+    data: { breadcrumb: 'خطای 404' }
   },
   {
     path: 'serverError',
-    component: ServerErrorComponent
+    component: ServerErrorComponent,
+    data: { breadcrumb: 'خطا در سمت سرور' }
   },
   {
     path: '**',
