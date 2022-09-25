@@ -55,6 +55,13 @@ body {
 @import '@angular/material/prebuilt-themes/indigo-pink.css';
 //toast message
 @import 'ngx-toastr/toastr.css';
+//spinner
+@import 'ngx-spinner/animations/square-jelly-box.css';
+.spinner-text {
+  font-size: 1.3rem;
+  color: white;
+  margin-top: 2.2rem;
+}
 // default
 *,
 *:before,
@@ -99,7 +106,7 @@ body {
   padding: 8px 16px;
   display: inline-block;
   border-radius: 4px;
-  background-color: dodgerblue;
+  background-color: rgb(171, 226, 253);
 }
 
 .xng-breadcrumb-separator {

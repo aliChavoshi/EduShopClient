@@ -1,3 +1,4 @@
+import { LoadingInterceptor } from './interceptors/loading.interceptor';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -5,18 +6,34 @@ import { CommonModule } from '@angular/common';
 import { FooterComponent } from './layers/footer/footer.component';
 import { NavbarComponent } from './layers/navbar/navbar.component';
 import { NotFoundComponent } from './layers/not-found/not-found.component';
+import { ServerErrorComponent } from './layers/server-error/server-error.component';
+import { BreadcrumbComponent } from './layers/breadcrumb/breadcrumb.component';
+//interceptors
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ErrorHandlingInterceptor } from './interceptors/error-handling.interceptor';
-import { ServerErrorComponent } from './layers/server-error/server-error.component';
-
+//third party
+import { BreadcrumbModule } from 'xng-breadcrumb';
+import { NgxSpinnerModule } from 'ngx-spinner';
 @NgModule({
-  declarations: [FooterComponent, NavbarComponent, NotFoundComponent, ServerErrorComponent],
-  imports: [CommonModule, RouterModule],
-  exports: [FooterComponent, NavbarComponent],
+  declarations: [FooterComponent, NavbarComponent, NotFoundComponent, ServerErrorComponent, BreadcrumbComponent],
+  imports: [
+    CommonModule,
+    RouterModule,
+    BreadcrumbModule,
+    NgxSpinnerModule.forRoot({
+      type: 'square-jelly-box'
+    })
+  ],
+  exports: [FooterComponent, NavbarComponent, BreadcrumbComponent, NgxSpinnerModule],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
       useClass: ErrorHandlingInterceptor,
+      multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoadingInterceptor,
       multi: true
     }
   ]
