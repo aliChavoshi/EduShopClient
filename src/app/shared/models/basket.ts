@@ -5,8 +5,8 @@ export interface IBasket {
   items: IBasketItems[];
 }
 export interface IBasketItems {
-  id: number;
-  isDelete: boolean;
+  id: number; //productId
+  isDelete?: boolean;
   product: string;
   type: string;
   brand: string;

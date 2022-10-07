@@ -7,11 +7,10 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./card-shop.component.scss']
 })
 export class CardShopComponent implements OnInit {
-  @Input() product : IProduct;
-  
-  constructor() { }
+  @Input() product: IProduct;
 
-  ngOnInit(): void {
-  }
+  constructor() {}
 
+  ngOnInit(): void {}
+  addItemToBasket() {}
 }
