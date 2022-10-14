@@ -17,7 +17,7 @@
       <div class="text-end">
         <button type="button" routerLink="/login" class="btn btn-outline-light mx-2">ورود <span class="fas fa-sign-in"></span></button>
         <button type="button" routerLink="/register" class="btn btn-warning">عضویت <span class="fas fa-user"></span></button>
-        <button type="button" class="btn btn-primary position-relative mx-2">
+        <button type="button" routerLink="/basket"class="btn btn-primary position-relative mx-2">
           <span class="fas fa-shopping-cart"></span>
           <span *ngIf="basket$ | async as basket" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
             {{ basket?.items?.length }}

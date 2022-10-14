@@ -1,1 +1,27 @@
-<p>basket works!</p>
+<div class="container" *ngIf="basket$ | async as basket">
+  <table class="table table-responsive table-hover table-bordered text-center">
+    <thead class="table-primary">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">تصویر</th>
+        <th scope="col">نام محصول</th>
+        <th scope="col">نوع</th>
+        <th scope="col">برند</th>
+        <th scope="col">تعداد</th>
+        <th scope="col">قیمت</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of basket?.items; let i = index">
+        <th scope="row">{{ i + 1 }}</th>
+        <td><img [src]="item.pictureUrl" class="img-thumbnail" style="max-width: 8rem" /></td>
+        <td>{{ item.product }}</td>
+        <td>{{ item.type }}</td>
+        <td>{{ item.brand }}</td>
+        <td>{{ item.quantity }}</td>
+        <td>{{ item.price * item.quantity | number }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <app-order-total></app-order-total>
+</div>

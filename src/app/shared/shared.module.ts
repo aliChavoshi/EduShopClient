@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 //components
 import { CardShopComponent } from './components/card-shop/card-shop.component';
+import { OrderTotalComponent } from './components/order-total/order-total.component';
 //angular material
 import { MatSidenavModule } from '@angular/material/sidenav';
 //ngx-bootstrap
@@ -14,7 +15,7 @@ import { ToastrModule } from 'ngx-toastr';
 //breadcrumb
 
 @NgModule({
-  declarations: [CardShopComponent],
+  declarations: [CardShopComponent, OrderTotalComponent],
   imports: [
     CommonModule,
     MatSidenavModule,
@@ -28,6 +29,6 @@ import { ToastrModule } from 'ngx-toastr';
       timeOut: 5000
     })
   ],
-  exports: [CardShopComponent, MatSidenavModule, PaginationModule, ToastrModule]
+  exports: [CardShopComponent, MatSidenavModule, PaginationModule, ToastrModule, OrderTotalComponent]
 })
 export class SharedModule {}
