@@ -18,7 +18,13 @@
         <td>{{ item.product }}</td>
         <td>{{ item.type }}</td>
         <td>{{ item.brand }}</td>
-        <td>{{ item.quantity }}</td>
+        <td>
+          <div>
+            <button (click)="increaseItemQuantity(item)" class="btn btn-sm btn-success"><span class="fas fa-plus"></span></button>
+            {{ item.quantity }}
+            <button (click)="decreaseItemQuantity(item)" class="btn btn-sm btn-warning"><span class="fas fa-minus"></span></button>
+          </div>
+        </td>
         <td>{{ item.price * item.quantity | number }}</td>
       </tr>
     </tbody>

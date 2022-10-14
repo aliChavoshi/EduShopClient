@@ -1,1 +1,5 @@
-<p>order-total works!</p>
+<div class="list-group border mt-2 list-group-horizontal-md" *ngIf="basketTotal$ | async as basket">
+  <button type="button" class="list-group-item list-group-item-action" aria-current="true">هزینه ارسال : {{ basket?.shipping | number }}</button>
+  <button type="button" class="list-group-item list-group-item-action">قیمت محصولات : {{ basket.subTotal | number }}</button>
+  <button type="button" class="list-group-item list-group-item-action bg-danger text-white">قیمت نهایی : {{ basket.total | number }}</button>
+</div>

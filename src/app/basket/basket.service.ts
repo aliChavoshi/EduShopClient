@@ -40,7 +40,6 @@ export class BasketService {
   deleteBasket(id: string) {
     //TODO
   }
-
   addItemToBasket(product: IProduct, quantity = 1) {
     //product => IBasketItem
     const itemToAdd: IBasketItems = this.mapProductToBasketItem(product, quantity);
@@ -51,6 +50,10 @@ export class BasketService {
     //create Basket send request to backend
     return this.setBasket(basket);
   }
+  getCurrentBasketSource() {
+    return this.basketItems.getValue();
+  }
+
   private mapProductToBasketItem(product: IProduct, quantity: number): IBasketItems {
     return {
       id: product.id,
@@ -83,15 +86,11 @@ export class BasketService {
   }
   private calculateTotal() {
     const basket = this.getCurrentBasketSource();
-    let shipping = 0;
+    let shipping = 10000;
     let subTotal = basket.items.reduce((init, item) => {
       return item.price * item.quantity + init;
     }, 0);
     let total = subTotal + shipping;
     this.totalBasket.next({ shipping: shipping, subTotal: subTotal, total: total });
-  }
-
-  getCurrentBasketSource() {
-    return this.basketItems.getValue();
   }
 }
