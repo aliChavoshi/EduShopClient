@@ -20,7 +20,7 @@ export class ShopDetailComponent implements OnInit {
     this.shopService.getProduct(this.id).subscribe((res) => {
       this.title.setTitle(res?.title);
       this.bc.set('@ProductDetail', res.title);
-      console.log(res);
+      // console.log(res);
     });
   }
 }

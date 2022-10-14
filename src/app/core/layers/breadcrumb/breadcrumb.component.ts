@@ -10,7 +10,7 @@ export class BreadcrumbComponent implements OnInit {
   bcLength = 0;
   constructor(private bc: BreadcrumbService) {
     this.bc.breadcrumbs$.subscribe((breadcrumbs) => {
-      console.log(breadcrumbs);
+      // console.log(breadcrumbs);
       
       this.bcLength = breadcrumbs?.length;
     });

@@ -1,3 +1,4 @@
+import { BasketService } from './../../../basket/basket.service';
 import { IProduct } from './../../models/product';
 import { Component, Input, OnInit } from '@angular/core';
 
@@ -9,8 +10,12 @@ import { Component, Input, OnInit } from '@angular/core';
 export class CardShopComponent implements OnInit {
   @Input() product: IProduct;
 
-  constructor() {}
+  constructor(private basketService: BasketService) {}
 
   ngOnInit(): void {}
-  addItemToBasket() {}
+  addItemToBasket() {
+    this.basketService.addItemToBasket(this.product).subscribe((res) => {
+      console.log(res);
+    });
+  }
 }

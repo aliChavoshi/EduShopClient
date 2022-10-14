@@ -44,7 +44,7 @@ export class BasketService {
     //IBasketItem => Add Basket | update
     basket.items = this.addOrUpdateBasketItems(itemToAdd, basket.items, quantity);
     //create Basket send request to backend
-    this.setBasket(basket);
+    return this.setBasket(basket);
   }
   private mapProductToBasketItem(product: IProduct, quantity: number): IBasketItems {
     return {
@@ -60,7 +60,7 @@ export class BasketService {
   }
   private createBasket() {
     const basket = new Basket();
-    localStorage.setItem('basket_item', basket.id);
+    localStorage.setItem(environment.keyLocalStorageBasket, basket.id);
     return basket;
   }
   private addOrUpdateBasketItems(itemToAdd: IBasketItems, items: IBasketItems[], quantity: number): IBasketItems[] {
