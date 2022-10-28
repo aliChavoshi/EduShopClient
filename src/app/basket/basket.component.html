@@ -1,4 +1,4 @@
-<div class="container" *ngIf="basket$ | async as basket">
+<div class="container" *ngIf="basket$ | async as basket;else nothingFind">
   <table class="table table-responsive table-hover table-bordered text-center">
     <thead class="table-primary">
       <tr>
@@ -30,4 +30,15 @@
     </tbody>
   </table>
   <app-order-total></app-order-total>
+  <button class="btn btn-danger w-100 mt-5"> پرداخت</button>
 </div>
+<ng-template #nothingFind>
+  <div class="alert alert-success container mb-5" role="alert">
+    <!-- <h4 class="alert-heading">توجه!</h4> -->
+    <p>هیچ محصولی در سبد خرید شما نمیباشد</p>
+    <hr>
+    <p class="mb-0">لطفا ابتدا از بخش محصولات سبد خرید خود را تکمیل کنید</p>
+  </div>
+</ng-template>
+
+
