@@ -11,6 +11,12 @@ const routes: Routes = [
     data: { breadcrumb: { label: 'خانه' } }
   },
   {
+    path: 'account',
+    title: 'ورود به سایت',
+    loadChildren: () => import('./account/account.module').then((x) => x.AccountModule),
+    data: { breadcrumb: { skip: true } }
+  },
+  {
     path: 'basket',
     title: 'سبد خرید',
     loadChildren: () => import('./basket/basket.module').then((x) => x.BasketModule),
