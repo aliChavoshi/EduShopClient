@@ -6,16 +6,19 @@ import { RegisterComponent } from './register/register.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'login'
+    redirectTo: 'login',
+    pathMatch: 'full'
   },
   {
     path: 'login',
     component: LoginComponent,
+    pathMatch: 'full',
     data: { breadcrumb: { alias: 'login' } }
   },
   {
     path: 'register',
     component: RegisterComponent,
+    pathMatch: 'full',
     data: { breadcrumb: { alias: 'register' } }
   }
 ];

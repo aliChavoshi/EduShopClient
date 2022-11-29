@@ -83,7 +83,12 @@ body {
   direction: rtl;
   overflow-x: hidden;
 }
-
+h1,
+h2,
+h3,
+h4 {
+  font-family: IRANSans !important;
+}
 //configure sidenav material
 .mat-sidenav {
   width: 260px;
