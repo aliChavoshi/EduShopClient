@@ -2,29 +2,8 @@
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
     <!-- <img class="mb-4" src="/docs/5.2/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57" /> -->
     <h1 class="h3 mb-3 fw-normal text-center">ورود به سایت</h1>
-
-    <div class="form-floating mb-2">
-      <input type="email" class="form-control" formControlName="phoneNumber" id="floatingInput" placeholder="شماره همراه" />
-      <label for="floatingInput">شماره همراه</label>
-    </div>
-    <div class="form-floating mb-2">
-      <input type="password" class="form-control" formControlName="password" id="floatingPassword" placeholder="کلمه عبور" />
-      <label for="floatingPassword">کلمه عبور</label>
-    </div>
-    <!-- validators -->
-    <div
-      class="text-start mt-2 mb 2"
-      *ngIf="
-        (form.controls.phoneNumber.errors && form.controls.password.errors && form.controls.phoneNumber.touched) ||
-        (form.controls.password.touched && form.controls.phoneNumber.dirty) ||
-        form.controls.password.dirty
-      "
-    >
-      <span class="text-danger" *ngIf="form.controls.phoneNumber.hasError('required')">لطفا شماره همراه را وارد کنید</span>
-      <span class="text-danger" *ngIf="form.controls.phoneNumber.hasError('minlength')">شماره همراه را درست ثبت کنید</span>
-      <span class="text-danger" *ngIf="form.controls.phoneNumber.hasError('maxlength')">شماره همراه را درست ثبت کنید</span>
-      <span class="text-danger" *ngIf="form.controls.password.hasError('required')">لطفا کلمه عبور را وارد کنید</span>
-    </div>
+    <app-input formControlName="phoneNumber" label="شماره همراه"></app-input>
+    <app-input formControlName="password" label="کلمه عبور"></app-input>
     <button class="w-100 btn btn-lg btn-primary" type="submit">ورود به سایت</button>
   </form>
 </main>
