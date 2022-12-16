@@ -11,11 +11,12 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
 //toast message
 import { ToastrModule } from 'ngx-toastr';
+import { InputComponent } from './components/input/input.component';
 
 //breadcrumb
 
 @NgModule({
-  declarations: [CardShopComponent, OrderTotalComponent],
+  declarations: [CardShopComponent, OrderTotalComponent, InputComponent],
   imports: [
     CommonModule,
     MatSidenavModule,
@@ -29,6 +30,6 @@ import { ToastrModule } from 'ngx-toastr';
       timeOut: 5000
     })
   ],
-  exports: [CardShopComponent, MatSidenavModule, PaginationModule, ToastrModule, OrderTotalComponent]
+  exports: [CardShopComponent, MatSidenavModule, PaginationModule, ToastrModule, OrderTotalComponent,InputComponent]
 })
 export class SharedModule {}

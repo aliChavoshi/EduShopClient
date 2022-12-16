@@ -12,7 +12,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 export class LoginComponent implements OnInit {
   constructor(private bcService: BreadcrumbService, private accountService: AccountService) {}
   form = new FormGroup({
-    phoneNumber: new FormControl('', [Validators.required]),
+    phoneNumber: new FormControl('', [Validators.required, Validators.minLength(11), Validators.maxLength(11)]),
     password: new FormControl('', [Validators.required])
   });
   ngOnInit(): void {
