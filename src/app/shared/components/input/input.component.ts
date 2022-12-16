@@ -9,6 +9,7 @@ import { ControlValueAccessor, NgControl } from '@angular/forms';
 export class InputComponent implements OnInit, ControlValueAccessor {
   @ViewChild('input', { static: true }) input: ElementRef;
   @Input() type = 'text';
+  @Input() placeholder = '';
   @Input() label = '';
   disabled = false;
 
@@ -25,9 +26,10 @@ export class InputComponent implements OnInit, ControlValueAccessor {
   }
 
   onChange(event: any) {}
-  onTouched(event: any) {}
+  onTouched(event?: any) {}
 
   writeValue(obj: any): void {
+    this.controlDir.getError('')
     this.input.nativeElement.value = obj || '';
   }
   registerOnChange(fn: any): void {

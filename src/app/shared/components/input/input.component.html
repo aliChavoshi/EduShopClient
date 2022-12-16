@@ -1,18 +1,19 @@
 <div class="form-floating mb-2">
-  <input #input type="password" class="form-control" formControlName="password" id="floatingPassword" placeholder="کلمه عبور" />
-  <label for="floatingPassword">کلمه عبور</label>
+  <input
+    #input
+    [type]="type"
+    [ngClass]="controlDir && controlDir?.control && controlDir?.control?.touched && controlDir.control.dirty ? (controlDir.control.invalid ? 'is-invalid' : 'is-valid') : null"
+    [disabled]="disabled"
+    (input)="onChange($any($event.target).value)"
+    (blur)="onTouched()"
+    [id]="label"
+    class="form-control"
+    [placeholder]="placeholder"
+  />
+  <label [for]="label">{{ label }}</label>
 </div>
-<!-- validators -->
-<div
-  class="text-start mt-2 mb 2"
-  *ngIf="
-    (form.controls.phoneNumber.errors && form.controls.password.errors && form.controls.phoneNumber.touched) ||
-    (form.controls.password.touched && form.controls.phoneNumber.dirty) ||
-    form.controls.password.dirty
-  "
->
-  <span class="text-danger" *ngIf="form.controls.phoneNumber.hasError('required')">لطفا شماره همراه را وارد کنید</span>
-  <span class="text-danger" *ngIf="form.controls.phoneNumber.hasError('minlength')">شماره همراه را درست ثبت کنید</span>
-  <span class="text-danger" *ngIf="form.controls.phoneNumber.hasError('maxlength')">شماره همراه را درست ثبت کنید</span>
-  <span class="text-danger" *ngIf="form.controls.password.hasError('required')">لطفا کلمه عبور را وارد کنید</span>
+<div class="text-start mt-2 mb 2" *ngIf="controlDir && controlDir.control && controlDir.control.invalid && controlDir.control.touched && controlDir.control.dirty">
+  <span class="text-danger" *ngIf="controlDir?.control?.getError('required')">لطفا {{ label }} همراه را وارد کنید</span>
+  <span class="text-danger" *ngIf="controlDir?.control?.getError('minlength')">{{ label }} را درست ثبت کنید</span>
+  <span class="text-danger" *ngIf="controlDir?.control?.getError('maxlength')">{{ label }} را درست ثبت کنید</span>
 </div>

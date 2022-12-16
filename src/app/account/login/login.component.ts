@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
   constructor(private bcService: BreadcrumbService, private accountService: AccountService) {}
   form = new FormGroup({
     phoneNumber: new FormControl('', [Validators.required, Validators.minLength(11), Validators.maxLength(11)]),
-    password: new FormControl('', [Validators.required])
+    password: new FormControl({ value: '', disabled: false }, [Validators.required, Validators.minLength(5)])
   });
   ngOnInit(): void {
     this.bcService.set('@login', 'ورود به سایت');
