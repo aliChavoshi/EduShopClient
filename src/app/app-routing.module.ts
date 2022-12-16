@@ -2,6 +2,7 @@ import { ServerErrorComponent } from './core/layers/server-error/server-error.co
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { NotFoundComponent } from './core/layers/not-found/not-found.component';
+import { AuthGuard } from './core/guard/auth.guard';
 
 const routes: Routes = [
   {
@@ -24,6 +25,7 @@ const routes: Routes = [
   },
   {
     path: 'shop',
+    // canActivate: [AuthGuard],
     title: 'فروشگاه',
     loadChildren: () => import('./shop/shop.module').then((x) => x.ShopModule),
     data: { breadcrumb: 'محصولات' }
