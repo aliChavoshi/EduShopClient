@@ -18,6 +18,13 @@ const routes: Routes = [
     data: { breadcrumb: { skip: true } }
   },
   {
+    path: 'checkout',
+    title: 'پرداخت',
+    loadChildren: () => import('./checkout/checkout.module').then((x) => x.CheckoutModule),
+    data: { breadcrumb: 'پرداخت' }
+    // data: { breadcrumb: { skip: true } }
+  },
+  {
     path: 'basket',
     title: 'سبد خرید',
     loadChildren: () => import('./basket/basket.module').then((x) => x.BasketModule),

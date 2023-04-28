@@ -12,16 +12,17 @@ import { PaginationModule } from 'ngx-bootstrap/pagination';
 //toast message
 import { ToastrModule } from 'ngx-toastr';
 import { InputComponent } from './components/input/input.component';
-
-//breadcrumb
+import { MatStepperModule } from '@angular/material/stepper';
+import { StepperComponent } from './components/stepper/stepper.component';
 
 @NgModule({
-  declarations: [CardShopComponent, OrderTotalComponent, InputComponent],
+  declarations: [CardShopComponent, OrderTotalComponent, InputComponent, StepperComponent],
   imports: [
     CommonModule,
     MatSidenavModule,
     PaginationModule,
     RouterModule,
+    MatStepperModule,
     ToastrModule.forRoot({
       positionClass: 'toast-bottom-right',
       preventDuplicates: true,
@@ -30,6 +31,6 @@ import { InputComponent } from './components/input/input.component';
       timeOut: 5000
     })
   ],
-  exports: [CardShopComponent, MatSidenavModule, PaginationModule, ToastrModule, OrderTotalComponent,InputComponent]
+  exports: [CardShopComponent, MatSidenavModule, PaginationModule, ToastrModule, OrderTotalComponent, InputComponent, StepperComponent]
 })
 export class SharedModule {}
