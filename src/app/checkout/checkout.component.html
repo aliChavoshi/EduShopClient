@@ -1,6 +1,19 @@
 <div class="row">
   <div class="col-md-12">
-    <app-stepper></app-stepper>
+    <app-stepper [linearModeSelected]="true" #appStepper>
+      <mat-step label="انتخاب آدرس">
+        <app-checkout-address></app-checkout-address>
+      </mat-step>
+      <mat-step label="روش پرداخت">
+        <app-checkout-delivery></app-checkout-delivery>
+      </mat-step>
+      <mat-step label="مرور سبد خرید">
+        <app-checkout-review></app-checkout-review>
+      </mat-step>
+      <mat-step label="پرداخت">
+        <app-checkout-payment></app-checkout-payment>
+      </mat-step>
+    </app-stepper>
   </div>
   <app-order-total></app-order-total>
   <!-- <a class="btn btn-danger w-100 mt-5"> پرداخت</a> -->
