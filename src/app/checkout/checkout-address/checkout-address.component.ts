@@ -25,7 +25,6 @@ export class CheckoutAddressComponent implements OnInit, OnDestroy {
       console.log(res);
     });
   }
-
   private getAddresses() {
     const sub = this.accountService.getAddresses().subscribe((res: IAddress[]) => {
       this.addresses = res;
