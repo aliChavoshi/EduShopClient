@@ -14,6 +14,7 @@ import { ErrorHandlingInterceptor } from './interceptors/error-handling.intercep
 //third party
 import { BreadcrumbModule } from 'xng-breadcrumb';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { AuthJWTTokenInterceptor } from './interceptors/auth-jwttoken.interceptor';
 @NgModule({
   declarations: [FooterComponent, NavbarComponent, NotFoundComponent, ServerErrorComponent, BreadcrumbComponent],
   imports: [
@@ -26,6 +27,11 @@ import { NgxSpinnerModule } from 'ngx-spinner';
   ],
   exports: [FooterComponent, NavbarComponent, BreadcrumbComponent, NgxSpinnerModule],
   providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthJWTTokenInterceptor,
+      multi: true
+    },
     {
       provide: HTTP_INTERCEPTORS,
       useClass: ErrorHandlingInterceptor,

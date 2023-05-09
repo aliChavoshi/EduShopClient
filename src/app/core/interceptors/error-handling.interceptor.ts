@@ -14,6 +14,9 @@ export class ErrorHandlingInterceptor implements HttpInterceptor {
         if (error) {
           const base = error.error;
           switch (base.statusCode) {
+            case 401:
+              this.toast.error(base?.message);
+              break;
             case 404:
               this.router.navigateByUrl('/notFound');
               this.toast.error(base?.message);
@@ -22,7 +25,6 @@ export class ErrorHandlingInterceptor implements HttpInterceptor {
               this.router.navigateByUrl('/serverError');
               this.toast.error(base?.message);
               break;
-
             default:
               this.toast.error(base?.message);
               break;

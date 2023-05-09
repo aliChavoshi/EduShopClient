@@ -1,1 +1,47 @@
-<p>checkout-address works!</p>
+<div class="w-100 overflow-auto ff-IranSans" *ngIf="addresses.length > 0; else noItems">
+  <table class="table shadow caption-top table-hover table-responsive table-bordered text-center align-middle">
+    <caption>
+      <div class="d-inline">
+        <p class="d-inline">لیست آدرس</p>
+        <a class="btn btn-primary rounded m-1 btn-sm"><span class="fas fa-plus m-1"></span></a>
+      </div>
+    </caption>
+    <thead class="table-primary sticky-md-top">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">نام</th>
+        <th scope="col">نام خانوادگی</th>
+        <th scope="col">موبایل</th>
+        <th scope="col">کد پستی</th>
+        <th scope="col">استان</th>
+        <th scope="col">شهر</th>
+        <th scope="col">آدرس کلی</th>
+        <th scope="col">دستورات</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="cursor-pointer" *ngFor="let item of addresses; let i = index" (click)="onChangeAddressShipping(i)">
+        <th>
+          <input class="form-check-input" type="radio" (change)="onChangeAddressShipping(i)" [checked]="i === indexAddressShipping" [value]="item.id" />
+        </th>
+        <td>{{ item.firstName }}</td>
+        <td>{{ item.lastName }}</td>
+        <td>{{ item.number }}</td>
+        <td>{{ item.postalCode }}</td>
+        <td>{{ item.state }}</td>
+        <td>{{ item.city }}</td>
+        <td>{{ item.fullAddress }}</td>
+        <td>
+          <button (click)="setToMainAddress(item?.id)" [class]="item.isMain ? 'btn-primary' : 'btn-outline-primary'" class="btn btn-sm">پیش فرض</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<ng-template #noItems>
+  <div class="bg-light p-5 rounded border text-center mb-2">
+    <h1>توجه</h1>
+    <p class="lead">هیچ آدرسی برای شما ثبت نشده است</p>
+    <a class="btn btn-lg btn-primary" routerLinkActive="router-link-active" role="button">ثبت آدرس جدید</a>
+  </div>
+</ng-template>

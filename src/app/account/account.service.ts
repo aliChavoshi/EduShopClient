@@ -4,6 +4,7 @@ import { IUser, Login, Register } from './../shared/models/user';
 import { BehaviorSubject, map, Observable, of } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Injectable } from '@angular/core';
+import { IAddress } from '../shared/models/address';
 
 @Injectable({
   providedIn: 'root'
@@ -25,6 +26,9 @@ export class AccountService {
         return null;
       })
     );
+  }
+  getAddresses() {
+    return this.http.get<IAddress[]>(`${this.baseUrl}/account/getAddresses`);
   }
   register(register: Register) {
     return this.http.post<IUser>(`${this.baseUrl}/account/register`, register).pipe(

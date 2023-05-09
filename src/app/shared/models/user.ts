@@ -14,3 +14,17 @@ export type Register = {
   password: string;
   displayName: string;
 };
+export interface IAddress {
+  id: number;
+  isMain: true;
+  state: string;
+  city: string;
+  firstName: string;
+  fullAddress: string;
+  lastName: string;
+  number: string;
+  postalCode: string;
+}
+export interface ICheckoutFormBuilder {
+  address: IAddress;
+}
