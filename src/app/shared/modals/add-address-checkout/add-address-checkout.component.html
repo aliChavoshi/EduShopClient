@@ -1,0 +1,27 @@
+<div class="modal-header">
+  <h4 class="modal-title pull-left">{{ title }}</h4>
+  <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
+    <span aria-hidden="true" class="visually-hidden">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <form [formGroup]="form">
+    <app-input formControlName="number" type="text" label="شماره همراه" placeholder="شماره همراه"></app-input>
+    <app-input formControlName="firstName" type="text" label="نام" placeholder="نام"></app-input>
+    <app-input formControlName="lastName" type="text" label="نام خانوادگی" placeholder="نام خانوادگی"></app-input>
+    <app-input formControlName="state" type="text" label="استان" placeholder="استان"></app-input>
+    <app-input formControlName="city" type="text" label="شهر" placeholder="شهر"></app-input>
+    <app-input formControlName="postalCode" type="text" label="کد پستی" placeholder="کد پستی"></app-input>
+    <app-input formControlName="fullAddress" type="text" label="آدرس کامل" placeholder="آدرس کامل"></app-input>
+    <div class="form-check form-switch mt-1 py-3 border rounded">
+      <input class="form-check-input" type="checkbox" role="switch" formControlName="isMain" id="flexSwitchCheckDefault" />
+      <label class="form-check-label" for="flexSwitchCheckDefault">انتخاب به عنوان آدرس پیش فرض</label>
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-primary" [disabled]="form.invalid" (click)="onSubmit()">ثبت</button>
+  <button type="button" class="btn btn-warning" (click)="bsModalRef.hide()">
+    {{ closeBtnName }}
+  </button>
+</div>

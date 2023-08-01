@@ -14,14 +14,17 @@ import { ToastrModule } from 'ngx-toastr';
 import { InputComponent } from './components/input/input.component';
 import { MatStepperModule } from '@angular/material/stepper';
 import { StepperComponent } from './components/stepper/stepper.component';
+import { AddAddressCheckoutComponent } from './modals/add-address-checkout/add-address-checkout.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [CardShopComponent, OrderTotalComponent, InputComponent, StepperComponent],
+  declarations: [CardShopComponent, OrderTotalComponent, InputComponent, StepperComponent, AddAddressCheckoutComponent],
   imports: [
     CommonModule,
     MatSidenavModule,
     PaginationModule,
     RouterModule,
+    ReactiveFormsModule,
     MatStepperModule,
     ToastrModule.forRoot({
       positionClass: 'toast-bottom-right',
@@ -31,6 +34,6 @@ import { StepperComponent } from './components/stepper/stepper.component';
       timeOut: 5000
     })
   ],
-  exports: [CardShopComponent, MatSidenavModule, PaginationModule, ToastrModule, OrderTotalComponent, InputComponent, StepperComponent]
+  exports: [CardShopComponent, MatSidenavModule, PaginationModule, AddAddressCheckoutComponent, ToastrModule, OrderTotalComponent, InputComponent, StepperComponent]
 })
 export class SharedModule {}

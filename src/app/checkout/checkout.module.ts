@@ -10,9 +10,10 @@ import { CheckoutDeliveryComponent } from './checkout-delivery/checkout-delivery
 import { CheckoutPaymentComponent } from './checkout-payment/checkout-payment.component';
 import { CheckoutReviewComponent } from './checkout-review/checkout-review.component';
 import { CheckoutSuccessComponent } from './checkout-success/checkout-success.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 @NgModule({
   declarations: [CheckoutComponent, CheckoutAddressComponent, CheckoutDeliveryComponent, CheckoutPaymentComponent, CheckoutReviewComponent, CheckoutSuccessComponent],
-  imports: [CommonModule, CheckoutRoutingModule, SharedModule, MatStepperModule]
+  imports: [CommonModule, CheckoutRoutingModule, SharedModule, MatStepperModule, ModalModule.forRoot()]
 })
 export class CheckoutModule {}

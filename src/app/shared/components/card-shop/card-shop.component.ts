@@ -15,7 +15,7 @@ export class CardShopComponent implements OnInit {
   ngOnInit(): void {}
   addItemToBasket() {
     this.basketService.addItemToBasket(this.product).subscribe((res) => {
-      console.log(res);
+      // console.log(res);
     });
   }
 }

@@ -16,7 +16,7 @@ export type Register = {
 };
 export interface IAddress {
   id: number;
-  isMain: true;
+  isMain: boolean;
   state: string;
   city: string;
   firstName: string;

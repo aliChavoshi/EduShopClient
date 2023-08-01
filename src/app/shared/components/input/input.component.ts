@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef, Input, Self } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Input, Self, Optional } from '@angular/core';
 import { ControlValueAccessor, NgControl } from '@angular/forms';
 
 @Component({
@@ -13,8 +13,8 @@ export class InputComponent implements OnInit, ControlValueAccessor {
   @Input() label = '';
   disabled = false;
 
-  constructor(@Self() public controlDir: NgControl) {
-    this.controlDir.valueAccessor = this;
+  constructor(@Self() @Optional() public controlDir: NgControl) {
+    if (controlDir) this.controlDir.valueAccessor = this;
   }
   ngOnInit(): void {
     const control = this.controlDir.control;
@@ -29,7 +29,7 @@ export class InputComponent implements OnInit, ControlValueAccessor {
   onTouched(event?: any) {}
 
   writeValue(obj: any): void {
-    this.controlDir.getError('')
+    this.controlDir.getError('');
     this.input.nativeElement.value = obj || '';
   }
   registerOnChange(fn: any): void {
