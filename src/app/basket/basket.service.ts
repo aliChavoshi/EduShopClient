@@ -10,6 +10,7 @@ import { environment } from 'src/environments/environment';
 })
 export class BasketService {
   private backendUrl = environment.backendUrl;
+  private shippingPrice = 0;
   //basket read only
   private basketItems = new BehaviorSubject<IBasket>(null); //next
   basketItems$ = this.basketItems.asObservable(); //subscribe
@@ -129,13 +130,16 @@ export class BasketService {
     }
     return items;
   }
+  setShippingPrice(shippingPrice: number) {
+    this.shippingPrice = shippingPrice;
+    this.calculateTotal();
+  }
   private calculateTotal() {
     const basket = this.getCurrentBasketSource();
-    let shipping = 10000;
     let subTotal = basket.items.reduce((init, item) => {
       return item.price * item.quantity + init;
     }, 0);
-    let total = subTotal + shipping;
-    this.totalBasket.next({ shipping: shipping, subTotal: subTotal, total: total });
+    let total = subTotal + this.shippingPrice;
+    this.totalBasket.next({ shipping: this.shippingPrice, subTotal: subTotal, total: total });
   }
 }

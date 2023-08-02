@@ -1,3 +1,5 @@
+import { IDeliveryMethod } from './order';
+
 export interface IUser {
   email?: string;
   userName: string;
@@ -26,5 +28,6 @@ export interface IAddress {
   postalCode: string;
 }
 export interface ICheckoutFormBuilder {
-  address: IAddress;
+  address?: IAddress;
+  deliveryMethod?: IDeliveryMethod;
 }

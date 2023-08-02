@@ -24,7 +24,7 @@ export class ShopService {
   updateShopParams(params: ShopParams) {
     this.shopParams = params;
   }
-
+  
   getProducts(): Observable<IPagination<IProduct>> {
     let params = this.generateShopParams();
     return this.http.get<IPagination<IProduct>>(this.backendUrl + '/products', { params });

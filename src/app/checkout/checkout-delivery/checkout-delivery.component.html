@@ -1,1 +1,34 @@
-<p>checkout-delivery works!</p>
+<div class="w-100 ff-IranSans overflow-auto" *ngIf="deliveryMethods.length > 0; else noItems">
+  <table class="table shadow caption-top table-hover table-responsive table-bordered text-center align-middle">
+    <caption>
+      <div class="d-inline">
+        <p class="d-inline">لیست آدرس</p>
+      </div>
+    </caption>
+    <thead class="table-primary sticky-md-top">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">نوع پست</th>
+        <th scope="col">زمان ارسال (روز)</th>
+        <th scope="col">قیمت (تومان)</th>
+        <th scope="col">توضیحات</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr (click)="onChangeDelivery(i)" class="cursor-pointer" *ngFor="let item of deliveryMethods; let i = index">
+        <th><input class="form-check-input" type="radio" (change)="onChangeDelivery(i)" [checked]="i === indexSelected" [value]="item.id" /></th>
+        <td>{{ item.shortName }}</td>
+        <td>{{ item.deliveryTime }}</td>
+        <td>{{ item?.price === 0 ? 'رایگان' : (item?.price | number) }}</td>
+        <td>{{ item.description }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<ng-template #noItems>
+  <div class="bg-light p-5 rounded border text-center">
+    <h1>توجه</h1>
+    <p class="lead">اطلاعاتی برای این بخش ثبت نشده است</p>
+    <a class="btn btn-lg btn-primary" routerLinkActive="router-link-active" [routerLink]="['/']" routerLinkActive="router-link-active" role="button">صفحه اصلی</a>
+  </div>
+</ng-template>

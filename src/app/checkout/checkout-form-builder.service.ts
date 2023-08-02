@@ -1,6 +1,7 @@
 import { BehaviorSubject } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { IAddress, ICheckoutFormBuilder } from '../shared/models/user';
+import { IDeliveryMethod } from '../shared/models/order';
 
 @Injectable({
   providedIn: 'root'
@@ -13,5 +14,8 @@ export class CheckoutFormBuilderService {
 
   setAddress(address: IAddress) {
     this.formBuilder.next({ ...this.formBuilder.value, address });
+  }
+  setDeliveryMethod(deliveryMethod: IDeliveryMethod) {
+    this.formBuilder.next({ ...this.formBuilder.value, deliveryMethod });
   }
 }
