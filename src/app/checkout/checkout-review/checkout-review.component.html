@@ -1,1 +1,36 @@
-<p>checkout-review works!</p>
+<div class="container ff-IranSans" *ngIf="basket$ | async as basket; else nothingFind">
+  <table class="table table-responsive table-hover table-bordered text-center">
+    <thead class="table-primary">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">تصویر</th>
+        <th scope="col">نام محصول</th>
+        <th scope="col">نوع</th>
+        <th scope="col">برند</th>
+        <th scope="col">تعداد</th>
+        <th scope="col">قیمت</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of basket?.items; let i = index">
+        <th scope="row">{{ i + 1 }}</th>
+        <td><img [src]="item.pictureUrl" class="img-thumbnail" style="max-width: 8rem" /></td>
+        <td>{{ item.product }}</td>
+        <td>{{ item.type }}</td>
+        <td>{{ item.brand }}</td>
+        <td>{{ item.quantity }}</td>
+        <td>{{ item.price * item.quantity | number }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- <app-order-total></app-order-total> -->
+  <!-- <a class="btn btn-success w-100 mt-5">پرداخت </a> -->
+</div>
+<ng-template #nothingFind>
+  <div class="alert alert-success container mb-5" role="alert">
+    <!-- <h4 class="alert-heading">توجه!</h4> -->
+    <p>هیچ محصولی در سبد خرید شما نمیباشد</p>
+    <hr />
+    <p class="mb-0">لطفا ابتدا از بخش محصولات سبد خرید خود را تکمیل کنید</p>
+  </div>
+</ng-template>
