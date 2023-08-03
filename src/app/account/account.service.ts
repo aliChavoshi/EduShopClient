@@ -4,7 +4,7 @@ import { IUser, Login, Register } from './../shared/models/user';
 import { BehaviorSubject, map, Observable, of } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Injectable } from '@angular/core';
-import { IAddAddress, IAddress } from '../shared/models/address';
+import { IShipToAddress, IAddress } from '../shared/models/address';
 
 @Injectable({
   providedIn: 'root'
@@ -30,7 +30,7 @@ export class AccountService {
   getAddresses() {
     return this.http.get<IAddress[]>(`${this.baseUrl}/account/getAddresses`);
   }
-  addAddress(address: IAddAddress | any) {
+  addAddress(address: IShipToAddress | any) {
     return this.http.post<IAddress>(`${this.baseUrl}/account/createAddress`, address);
   }
   register(register: Register) {

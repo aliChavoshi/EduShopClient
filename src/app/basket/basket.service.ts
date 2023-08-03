@@ -100,6 +100,11 @@ export class BasketService {
     }
     return of(null);
   }
+  clearLocalBasket() {
+    this.basketItems.next(null);
+    this.totalBasket.next(null);
+    localStorage.removeItem(environment.keyLocalStorageBasket);
+  }
   private mapProductToBasketItem(product: IProduct, quantity: number): IBasketItems {
     return {
       id: product.id,

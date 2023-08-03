@@ -11,9 +11,10 @@ import { CheckoutPaymentComponent } from './checkout-payment/checkout-payment.co
 import { CheckoutReviewComponent } from './checkout-review/checkout-review.component';
 import { CheckoutSuccessComponent } from './checkout-success/checkout-success.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { ShowEnumPipe } from "../shared/pipes/show-enum.pipe";
 
 @NgModule({
-  declarations: [CheckoutComponent, CheckoutAddressComponent, CheckoutDeliveryComponent, CheckoutPaymentComponent, CheckoutReviewComponent, CheckoutSuccessComponent],
-  imports: [CommonModule, CheckoutRoutingModule, SharedModule, MatStepperModule, ModalModule.forRoot()]
+    declarations: [CheckoutComponent, CheckoutAddressComponent, CheckoutDeliveryComponent, CheckoutPaymentComponent, CheckoutReviewComponent, CheckoutSuccessComponent],
+    imports: [CommonModule, CheckoutRoutingModule, SharedModule, MatStepperModule, ModalModule.forRoot(), ShowEnumPipe]
 })
 export class CheckoutModule {}

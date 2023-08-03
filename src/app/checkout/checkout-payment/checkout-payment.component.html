@@ -1,1 +1,33 @@
-<p>checkout-payment works!</p>
+<div class="row ff-IranSans">
+  <h3 class="text-muted mt-3">انتخاب درگاه بانکی</h3>
+  <div class="col-md-12" *ngIf="!transferToPortal">
+    <div class="col-md-12 mb-2">
+      <ng-container *ngFor="let item of PortalType | showEnum">
+        <div class="d-block mb-2">
+          <input class="form-check-input cursor-pointer" [checked]="item.key == portalSelected" (change)="onChangePortal(item.key)" type="radio" [value]="item.key" class="m-1" />
+          <span [ngSwitch]="item.key">
+            <img *ngSwitchCase="1" (click)="onChangePortal(item.key)" src="/assets/img-portal/mellat.png" alt="mellat" class="img-thumbnail mw-75 cursor-pointer" />
+            <img *ngSwitchCase="2" (click)="onChangePortal(item.key)" src="/assets/img-portal/parsian.png" alt="mellat" class="img-thumbnail mw-75 cursor-pointer" />
+            <img *ngSwitchCase="3" (click)="onChangePortal(item.key)" src="/assets/img-portal/zarrinpal.png" alt="mellat" class="img-thumbnail mw-75 cursor-pointer" />
+          </span>
+          <label class="form-check-label mx-2">درگاه بانکی {{ item.value }}</label>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+  <div class="col-md-12" *ngIf="transferToPortal">
+    <div class="alert alert-primary text-center mt-2">
+      <h1><span class="fas fa-exclamation-triangle fa-2x"></span></h1>
+      <p class="lead">در حال انتقال به درگاه بانکی</p>
+      <div class="btn-group">
+        <span class="fas fa-credit-card fa-3x"></span>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- TODO : Description for payment -->
+<div class="row ff-IranSans">
+  <div class="container-fluid mt-3">
+    <a (click)="createOrder()" routerLinkActive="router-link-active" class="btn btn-success w-100">پرداخت نهایی</a>
+  </div>
+</div>

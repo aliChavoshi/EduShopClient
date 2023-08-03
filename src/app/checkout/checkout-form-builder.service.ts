@@ -18,4 +18,8 @@ export class CheckoutFormBuilderService {
   setDeliveryMethod(deliveryMethod: IDeliveryMethod) {
     this.formBuilder.next({ ...this.formBuilder.value, deliveryMethod });
   }
+
+  setPortalType(portalType: number) {
+    this.formBuilder.next({ ...this.formBuilder.value, portalType });
+  }
 }

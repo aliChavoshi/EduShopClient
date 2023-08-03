@@ -4,7 +4,7 @@ import { AccountService } from 'src/app/account/account.service';
 import { BsModalRef } from 'ngx-bootstrap/modal';
 import { FormControl, FormGroup, UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { IAddress } from '../../models/user';
-import { IAddAddress } from '../../models/address';
+import { IShipToAddress } from '../../models/address';
 
 @Component({
   selector: 'app-add-address-checkout',

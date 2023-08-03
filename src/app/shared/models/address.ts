@@ -9,7 +9,7 @@ export interface IAddress {
   number: string;
   postalCode: string;
 }
-export interface IAddAddress {
+export interface IShipToAddress {
   isMain: boolean | any;
   state: string;
   city: string;

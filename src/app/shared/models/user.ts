@@ -30,4 +30,5 @@ export interface IAddress {
 export interface ICheckoutFormBuilder {
   address?: IAddress;
   deliveryMethod?: IDeliveryMethod;
+  portalType : number;
 }
