@@ -25,8 +25,7 @@
     </div>
   </div>
 </div>
-<!-- TODO : Description for payment -->
-<div class="row ff-IranSans">
+<div class="row ff-IranSans" *ngIf="!transferToPortal">
   <div class="container-fluid mt-3">
     <a (click)="createOrder()" routerLinkActive="router-link-active" class="btn btn-success w-100">پرداخت نهایی</a>
   </div>

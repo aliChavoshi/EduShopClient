@@ -16,7 +16,6 @@ export class CheckoutDeliveryComponent implements OnInit {
 
   ngOnInit(): void {
     this.getDeliveryMethods();
-    this.setDeliveryMethod(this.indexSelected);
   }
   onChangeDelivery(index: number) {
     this.indexSelected = index;
@@ -35,6 +34,7 @@ export class CheckoutDeliveryComponent implements OnInit {
     this.orderService.getDeliveryMethods().subscribe((res) => {
       this.deliveryMethods = res;
       this.basketService.setShippingPrice(this.deliveryMethods[0].price);
+      this.setDeliveryMethod(this.indexSelected);
     });
   }
 }

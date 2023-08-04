@@ -1,1 +1,32 @@
-<p>checkout-success works!</p>
+<div class="alert alert-success text-center mt-2" *ngIf="status === 'success'">
+  <h1><span class="fas fa-exclamation-triangle fa-2x"></span></h1>
+  <p class="lead">پرداخت با موفقیت انجام شد</p>
+  <div class="btn-group">
+    <a class="btn btn-lg btn-outline-success" [routerLink]="['/profile/orders']" routerLinkActive="router-link-active">لیست سفارشات</a>
+    <a class="btn btn-lg btn-outline-success" [routerLink]="['/']" routerLinkActive="router-link-active">صفحه اصلی</a>
+  </div>
+</div>
+<div class="alert alert-danger text-center mt-2" *ngIf="status === 'failed'">
+  <h1><span class="fas fa-exclamation-triangle fa-2x"></span></h1>
+  <p class="lead">پرداخت با شکست روبرو شد</p>
+  <div class="btn-group">
+    <a class="btn btn-lg btn-outline-danger" [routerLink]="['/profile/orders']" routerLinkActive="router-link-active">لیست سفارشات</a>
+    <a class="btn btn-lg btn-outline-danger" [routerLink]="['/']" routerLinkActive="router-link-active">صفحه اصلی</a>
+  </div>
+</div>
+<div class="alert alert-warning text-center mt-2" *ngIf="status === 'cancelled'">
+  <h1><span class="fas fa-exclamation-triangle fa-2x"></span></h1>
+  <p class="lead">شما از پرداخت انصراف دادید</p>
+  <div class="btn-group">
+    <a class="btn btn-lg btn-outline-warning" [routerLink]="['/profile/orders']" routerLinkActive="router-link-active">لیست سفارشات</a>
+    <a class="btn btn-lg btn-outline-warning" [routerLink]="['/']" routerLinkActive="router-link-active">صفحه اصلی</a>
+  </div>
+</div>
+<div class="alert alert-warning text-center mt-2" *ngIf="status === 'unknown'">
+  <h1><span class="fas fa-exclamation-triangle fa-2x"></span></h1>
+  <p class="lead">وضعیت تراکنش نا مشخص است تا 24 ساعت دیگر نتیجه مشخص میشود</p>
+  <div class="btn-group">
+    <a class="btn btn-lg btn-outline-warning" [routerLink]="['/profile/orders']" routerLinkActive="router-link-active">لیست سفارشات</a>
+    <a class="btn btn-lg btn-outline-warning" [routerLink]="['/']" routerLinkActive="router-link-active">صفحه اصلی</a>
+  </div>
+</div>

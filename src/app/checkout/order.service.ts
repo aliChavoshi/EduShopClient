@@ -27,7 +27,7 @@ export class OrderService {
     let portalType: number = 3;
     // fill the base
     this.basketService.basketItems$.subscribe((res) => {
-      basketId = res.id;
+      basketId = res?.id;
     });
     this.formBuilder.$formBuilder.subscribe((res) => {
       (address = res.address), (deliveryMethod = res.deliveryMethod), (portalType = res.portalType);
