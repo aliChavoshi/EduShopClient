@@ -12,6 +12,13 @@ const routes: Routes = [
     data: { breadcrumb: { label: 'خانه' } }
   },
   {
+    path: 'profile',
+    canLoad: [AuthGuard],
+    title: 'پروفایل کاربری',
+    loadChildren: () => import('./profile/profile.module').then((x) => x.ProfileModule),
+    data: { breadcrumb: { skip: true } }
+  },
+  {
     path: 'account',
     title: 'ورود به سایت',
     loadChildren: () => import('./account/account.module').then((x) => x.AccountModule),
@@ -19,6 +26,7 @@ const routes: Routes = [
   },
   {
     path: 'checkout',
+    // canActivate: [AuthGuard],
     title: 'پرداخت',
     loadChildren: () => import('./checkout/checkout.module').then((x) => x.CheckoutModule),
     data: { breadcrumb: 'پرداخت' }

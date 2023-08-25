@@ -16,7 +16,8 @@
       </a>
       <div class="text-end">
         <ng-container *ngIf="currentUser$ | async; else items">
-          <button type="button" (click)="logout()" routerLink="/logout" class="btn btn-danger">خروج<span class="fas fa-user"></span></button>
+          <button type="button" (click)="logout()" routerLink="/logout" class="btn btn-danger mx-2">خروج<span class="fas fa-user"></span></button>
+          <button type="button" routerLink="/profile" class="btn btn-primary">پروفایل<span class="fas fa-user-edit"></span></button>
         </ng-container>
         <ng-template #items>
           <button type="button" routerLink="/account/login" class="btn btn-outline-light mx-2">ورود <span class="fas fa-sign-in"></span></button>
