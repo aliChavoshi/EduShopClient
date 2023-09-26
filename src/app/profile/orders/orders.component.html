@@ -23,10 +23,10 @@
       <tr class="cursor-pointer" *ngFor="let item of orders; let i = index">
         <th>{{ i + 1 }}</th>
         <td>{{ item?.buyerPhoneNumber }}</td>
-        <td>{{ item?.created | date: 'short' }}</td>
+        <td>{{ item?.created | shamsi : 'dateTime' }}</td>
         <td>{{ item?.subTotal | number }}</td>
         <td>
-          {{ item?.deliveryMethod?.price ? item?.deliveryMethod?.price : 'رایگان' }}
+          {{ item?.deliveryMethod?.price ? (item?.deliveryMethod?.price | number) : 'رایگان' }}
         </td>
         <!-- <td>{{ item?.totalWithDiscount | number }}</td> -->
         <td>
