@@ -28,10 +28,10 @@ export interface IOrder {
   isFinally: boolean;
   total: number;
   portal: Portal;
-  portalType: number;
+  portalType: number | string;
   authority: string;
   link: string;
-  status: number;
+  status: number | string;
   deliveryMethod: IDeliveryMethod;
   shipToAddress: IShipToAddress;
   orderItems: IOrderItem[];

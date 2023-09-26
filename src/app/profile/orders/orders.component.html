@@ -1,1 +1,55 @@
-<p>orders works!</p>
+<div class="w-100 overflow-auto" *ngIf="orders?.length > 0; then items; else noItems"></div>
+
+<ng-template #items>
+  <table class="table shadow caption-top table-hover table-responsive text-center align-middle p-0 m-0">
+    <thead class="table-primary sticky-md-top">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">شماره همراه</th>
+        <th scope="col">تاریخ سفارش</th>
+        <th scope="col">جمع کالا</th>
+        <th scope="col">هزینه پست</th>
+        <!-- <th scope="col">مبلغ پرداختی (تومان)</th> -->
+        <th scope="col">قیمت اصلی (تومان)</th>
+        <th scope="col">وضیعت پرداخت</th>
+        <th scope="col">درگاه پرداخت</th>
+        <th scope="col">نحوه ارسال</th>
+        <th scope="col">تعداد روز تحویل</th>
+        <th scope="col">وضعیت ارسال</th>
+        <th scope="col">دستورات</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="cursor-pointer" *ngFor="let item of orders; let i = index">
+        <th>{{ i + 1 }}</th>
+        <td>{{ item?.buyerPhoneNumber }}</td>
+        <td>{{ item?.created | date: 'short' }}</td>
+        <td>{{ item?.subTotal | number }}</td>
+        <td>
+          {{ item?.deliveryMethod?.price ? item?.deliveryMethod?.price : 'رایگان' }}
+        </td>
+        <!-- <td>{{ item?.totalWithDiscount | number }}</td> -->
+        <td>
+          {{ item?.total | number }}
+        </td>
+        <td [class]="item?.isFinally ? 'text-success' : 'text-danger'">
+          {{ item?.isFinally ? 'پرداخت شده' : 'پرداخت نشده' }}
+        </td>
+        <!-- TODO -->
+        <td>{{ item?.portalType }}</td>
+        <td>{{ item?.deliveryMethod?.shortName }}</td>
+        <td>{{ item?.deliveryMethod?.deliveryTime }}</td>
+        <!-- TODO -->
+        <td>{{ item?.status }}</td>
+        <td>
+          <a (click)="showOrder(item?.id)" class="btn btn-outline-primary btn-sm">
+            <span class="fas fa-eye m-1"></span>
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</ng-template>
+<ng-template #noItems>
+  <div class="alert alert-warning" role="alert">تاکنون سفارشی برای شما ثبت نشده است</div>
+</ng-template>
