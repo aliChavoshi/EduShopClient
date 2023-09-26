@@ -1,4 +1,5 @@
 import { IShipToAddress } from './address';
+import { PortalTypeEnum } from './checkout';
 
 export interface IDeliveryMethod {
   id: number;
@@ -28,15 +29,24 @@ export interface IOrder {
   isFinally: boolean;
   total: number;
   portal: Portal;
-  portalType: number | string;
+  portalType: number | string | PortalTypeEnum; //enum
   authority: string;
   link: string;
-  status: number | string;
+  status: number | string | OrderStatusEnum; //enum
   deliveryMethod: IDeliveryMethod;
   shipToAddress: IShipToAddress;
   orderItems: IOrderItem[];
 }
-
+export enum OrderStatusEnum {
+  درحال_بررسی = 1,
+  درحال_پردازش,
+  تحویل_اداره_پست,
+  ارسال_شده,
+  تحویل_داده_شده,
+  بازگشت_داده_شده,
+  انصراف_داده_شده,
+  ناموفق
+}
 export interface Portal {
   id: number;
   orderId: number;

@@ -36,11 +36,11 @@
           {{ item?.isFinally ? 'پرداخت شده' : 'پرداخت نشده' }}
         </td>
         <!-- TODO -->
-        <td>{{ item?.portalType }}</td>
+        <td>{{ item?.portalType | castEnum : 'PortalType' }}</td>
         <td>{{ item?.deliveryMethod?.shortName }}</td>
         <td>{{ item?.deliveryMethod?.deliveryTime }}</td>
         <!-- TODO -->
-        <td>{{ item?.status }}</td>
+        <td>{{ item?.status | castEnum : 'OrderStatus' }}</td>
         <td>
           <a (click)="showOrder(item?.id)" class="btn btn-outline-primary btn-sm">
             <span class="fas fa-eye m-1"></span>

@@ -11,8 +11,9 @@ import { CoreModule } from '../core/core.module';
 import { SharedModule } from '../shared/shared.module';
 import { RouterModule } from '@angular/router';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { CastEnumPipe } from "../shared/pipes/cast-enum.pipe";
 @NgModule({
-  declarations: [ProfileComponent, OrdersComponent, ChangePasswordComponent, NotificationsComponent],
-  imports: [CommonModule, HttpClientModule, ProfileRoutingModule, ReactiveFormsModule, CoreModule, SharedModule, RouterModule, MatSidenavModule]
+    declarations: [ProfileComponent, OrdersComponent, ChangePasswordComponent, NotificationsComponent],
+    imports: [CommonModule, HttpClientModule, ProfileRoutingModule, ReactiveFormsModule, CoreModule, SharedModule, RouterModule, MatSidenavModule, CastEnumPipe]
 })
 export class ProfileModule {}

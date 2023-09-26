@@ -16,7 +16,6 @@ import { MatStepperModule } from '@angular/material/stepper';
 import { StepperComponent } from './components/stepper/stepper.component';
 import { AddAddressCheckoutComponent } from './modals/add-address-checkout/add-address-checkout.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { ShowEnumPipe } from './pipes/show-enum.pipe';
 
 @NgModule({
   declarations: [CardShopComponent, OrderTotalComponent, InputComponent, StepperComponent, AddAddressCheckoutComponent],

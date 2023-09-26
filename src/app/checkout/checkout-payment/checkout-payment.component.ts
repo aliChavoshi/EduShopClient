@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { OrderService } from '../order.service';
 import { ToastrService } from 'ngx-toastr';
 import { CheckoutFormBuilderService } from '../checkout-form-builder.service';
-import { PortalType } from 'src/app/shared/models/checkout';
+import { PortalTypeEnum } from 'src/app/shared/models/checkout';
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./checkout-payment.component.scss']
 })
 export class CheckoutPaymentComponent implements OnInit {
-  PortalType = PortalType;
+  PortalType = PortalTypeEnum;
   portalSelected = 3; // zarrin pal
   transferToPortal = false;
   constructor(private orderService: OrderService, private toastr: ToastrService, private router: Router, private formBuilder: CheckoutFormBuilderService) {}
