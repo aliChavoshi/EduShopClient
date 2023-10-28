@@ -17,9 +17,10 @@ import { StepperComponent } from './components/stepper/stepper.component';
 import { AddAddressCheckoutComponent } from './modals/add-address-checkout/add-address-checkout.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ShamsiPipe } from './pipes/shamsi.pipe';
+import { OrderDetailComponent } from './modals/order-detail/order-detail.component';
 
 @NgModule({
-  declarations: [CardShopComponent, OrderTotalComponent, InputComponent, StepperComponent, AddAddressCheckoutComponent],
+  declarations: [CardShopComponent, OrderTotalComponent, InputComponent, StepperComponent, AddAddressCheckoutComponent, OrderDetailComponent],
   imports: [
     CommonModule,
     MatSidenavModule,
