@@ -12,5 +12,8 @@ export class OrderDetailComponent implements OnInit {
 
   constructor(public bsModalRef: BsModalRef) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log(this.order);
+
+  }
 }

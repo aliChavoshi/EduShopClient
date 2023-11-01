@@ -13,8 +13,21 @@ import { RouterModule } from '@angular/router';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { CastEnumPipe } from '../shared/pipes/cast-enum.pipe';
 import { ShamsiPipe } from '../shared/pipes/shamsi.pipe';
+import { ModalModule } from 'ngx-bootstrap/modal';
 @NgModule({
   declarations: [ProfileComponent, OrdersComponent, ChangePasswordComponent, NotificationsComponent],
-  imports: [CommonModule, HttpClientModule, ProfileRoutingModule, ReactiveFormsModule, CoreModule, SharedModule, RouterModule, MatSidenavModule, CastEnumPipe, ShamsiPipe]
+  imports: [
+    CommonModule,
+    HttpClientModule,
+    ProfileRoutingModule,
+    ReactiveFormsModule,
+    ModalModule.forRoot(),
+    CoreModule,
+    SharedModule,
+    RouterModule,
+    MatSidenavModule,
+    CastEnumPipe,
+    ShamsiPipe
+  ]
 })
 export class ProfileModule {}

@@ -6,7 +6,45 @@
 </div>
 <div class="modal-body">
   <div class="container">
-    <h1>body</h1>
+    <div class="w-100 overflow-auto" *ngIf="order">
+      <table class="table shadow caption-top table-hover table-responsive table-bordered text-center align-middle">
+        <caption>
+          <div class="d-inline">
+            <p class="d-inline">لیست سفارشات</p>
+          </div>
+        </caption>
+        <thead class="table-primary sticky-md-top">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">محصول</th>
+            <th scope="col">تصویر</th>
+            <th scope="col">نوع</th>
+            <th scope="col">برند</th>
+            <th scope="col">تعداد</th>
+            <th scope="col">قیمت(تومان)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of order.orderItems; let i = index">
+            <th>{{ i + 1 }}</th>
+            <td>
+              <b>{{ item?.productName }}</b>
+            </td>
+            <td class="text-center">
+              <a [routerLink]="['/shop', item?.productItemId]" routerLinkActive="router-link-active"
+                ><img [src]="item.pictureUrl" [alt]="item.productName" class="w-25 mw-55"
+              /></a>
+            </td>
+            <td>{{ item.productTypeName }}</td>
+            <td>{{ item.productBrandName }}</td>
+            <td>
+              <b class="mt-2">{{ item.quantity }}</b>
+            </td>
+            <td>{{ item.price * item.quantity | number }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>
 <div class="modal-footer">
