@@ -1,27 +1,52 @@
-# EduStoreClient
+# EduShopClient
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.4.
+این پروژه، بخش **فرانت‌اند** فروشگاه اینترنتی است که با استفاده از **Angular** توسعه داده شده است. در این پروژه از **Angular Material** برای طراحی رابط کاربری استفاده شده است.
 
-## Development server
+## 🚀 ویژگی‌ها
+- پیاده‌سازی با **Angular 14**
+- استفاده از **Angular Material** برای طراحی رابط کاربری
+- پیاده‌سازی **سبد خرید، سفارشات، لیست علاقه‌مندی‌ها و پرداخت آنلاین**
+- مدیریت کاربران با **JWT Authentication**
+- پشتیبانی از **Routing و Lazy Loading**
+- بهینه‌سازی عملکرد با **RxJS**
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## 📦 نصب و راه‌اندازی
+### 1️⃣ پیش‌نیازها
+- **Node.js** (نسخه پیشنهادی: LTS)
+- **Angular CLI**
 
-## Code scaffolding
+### 2️⃣ نصب وابستگی‌ها
+```sh
+npm install
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### 3️⃣ اجرای پروژه در محیط توسعه
+```sh
+ng serve
+```
+سپس پروژه در `http://localhost:4200/` اجرا خواهد شد.
 
-## Build
+## 📂 ساختار پروژه
+```
+EduShopClient/
+│── src/
+│   ├── app/
+│   │   ├── components/   # کامپوننت‌های فرانت‌اند
+│   │   ├── services/     # سرویس‌ها و API Calls
+│   │   ├── pages/        # صفحات اصلی
+│   │   ├── guards/       # مدیریت سطوح دسترسی
+│   │   ├── models/       # مدل‌های داده‌ای
+│   ├── assets/           # تصاویر و استایل‌های عمومی
+│   ├── environments/     # تنظیمات محیطی
+│── angular.json
+│── package.json
+│── README.md
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## 🔗 لینک‌های مرتبط
+- **بک‌اند پروژه (ASP.NET Web API):** [EduShopBackend](https://github.com/aliChavoshi/EduShopBackend)
+- **دوره آموزشی مرتبط:** [وب‌سایت فروشگاهی مشابه دیجی‌کالا](https://www.daneshjooyar.com/وب-سایت-فروشگاهی-مشابه-دیجی-کالا/)
 
-## Running unit tests
+## 👨‍💻 توسعه‌دهنده
+- **علی چاوشی**
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
